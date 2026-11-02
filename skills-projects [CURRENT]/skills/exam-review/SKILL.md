@@ -2,7 +2,7 @@
 name: exam-review
 description: Run structured study review sessions for the user's coursework in five modes — diagnostic gap-finding, one-at-a-time active recall, full practice exams, Quizlet/Anki flashcard export, and condensed cheat sheets. Use whenever he asks to be quizzed, tested, or reviewed; asks what he should study, where he's weak, or whether he's ready; asks for flashcards, a practice test, or a cheat sheet; says "quiz me," "test me," "review chapter X," or mentions an upcoming exam. Works for ANY subject — accounting, statistics, information systems, psychology, economics, computer science. These are multi-turn graded sessions with specific formats, not one-shot answers, so consult the skill rather than improvising a quiz. Do NOT use for explaining new material he just pasted — that is slide-breakdown.
 metadata:
-  version: "2.0"
+  version: "2.1"
 ---
 
 # Exam Review

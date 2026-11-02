@@ -9,7 +9,7 @@ The to-do list and inventory for every skill and prompt in this library, and the
 - status: built
 - description: Run structured study review sessions for a course in six modes: diagnose gaps, one-question-at-a-time recall, practice exams, Quizlet/Anki flashcards, cheat sheets, and post-exam analysis of a graded exam.
 - spec: [exam-review/SKILL.md](<skills-projects [CURRENT]/skills/exam-review/SKILL.md>) (built before this workflow existed)
-- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: gendered pronouns for the user; a reference to the owner's account-level instructions; a real course code in a flashcard filename example; a past-chat reference in mode selection; "five modes" stated but six defined, and the description omits POST-EXAM; post-exam.md says "four" error types but lists five; flashcard saving has no fallback outside Claude chat.
+- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: gendered pronouns for the user; a reference to the owner's account-level instructions; a past-chat reference in mode selection; "five modes" stated but six defined, and the description omits POST-EXAM; post-exam.md says "four" error types but lists five; flashcard saving has no fallback outside Claude chat.
 
 ### slide-breakdown
 - type: skill

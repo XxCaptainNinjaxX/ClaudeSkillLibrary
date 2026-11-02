@@ -19,10 +19,10 @@ IDEAS.md                     to-do list and status of everything above
 
 ### education
 
-| Skill | What it does | Works in | Version |
-|---|---|---|---|
-| [exam-review](<skills-projects [CURRENT]/skills/exam-review/README.md>) | Six study-review modes: diagnosis, recall, practice exams, flashcards, cheat sheets, post-exam analysis. | Claude chat, Claude Code, Gemini, any | 2.0 |
-| [slide-breakdown](<skills-projects [CURRENT]/skills/slide-breakdown/README.md>) | Turns pasted course material into a fixed-format breakdown with examples and exam traps. | Claude chat, Claude Code, Gemini, any | 1.0 |
+| Skill                                                                           | What it does                                                                                             | Works in                              | Version |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------- |
+| [exam-review](<skills-projects [CURRENT]/skills/exam-review/README.md>)         | Six study-review modes: diagnosis, recall, practice exams, flashcards, cheat sheets, post-exam analysis. | Claude chat, Claude Code, Gemini, any | 2.1     |
+| [slide-breakdown](<skills-projects [CURRENT]/skills/slide-breakdown/README.md>) | Turns pasted course material into a fixed-format breakdown with examples and exam traps.                 | Claude chat, Claude Code, Gemini, any | 1.0     |
 
 ### career-planning
 
@@ -34,15 +34,19 @@ No skills yet.
 
 ### other
 
-| Skill | What it does | Works in | Version |
-|---|---|---|---|
-| [council](<skills-projects [CURRENT]/skills/council/README.md>) | Independent Claude subagents debate a hard decision, peer-review each other, and deliver a verdict. | Claude chat (Claude Code ⚠️) | 1.1 |
-| [handoff](<skills-projects [CURRENT]/skills/handoff/README.md>) | Compresses a chat into a handoff any new chat or model can continue from. | Claude chat, Claude Code, Gemini, any | 2.0 |
-| [patch](<skills-projects [CURRENT]/skills/patch/README.md>) | Packages a misfiring claude.ai instruction into one report another chat can fix. | Claude chat | 1.0 |
+| Skill                                                           | What it does                                                                                        | Works in                              | Version |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------- | ------- |
+| [council](<skills-projects [CURRENT]/skills/council/README.md>) | Independent Claude subagents debate a hard decision, peer-review each other, and deliver a verdict. | Claude chat (Claude Code ⚠️)          | 1.1     |
+| [handoff](<skills-projects [CURRENT]/skills/handoff/README.md>) | Compresses a chat into a handoff any new chat or model can continue from.                           | Claude chat, Claude Code, Gemini, any | 2.0     |
+| [patch](<skills-projects [CURRENT]/skills/patch/README.md>)     | Packages a misfiring claude.ai instruction into one report another chat can fix.                    | Claude chat                           | 1.0     |
 
 ## Projects
 
-Instructions to paste into a claude.ai Project, a Gem, or a custom GPT. No projects yet; they'll go in [skills-projects [CURRENT]/projects/](<skills-projects [CURRENT]/projects/README.md>).
+Instructions to paste into a claude.ai Project, a Gem, or a custom GPT. They live in [skills-projects [CURRENT]/projects/](<skills-projects [CURRENT]/projects/README.md>).
+
+| Project                                                       | What it does                                                                          | Works in                           |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------- |
+| [IS265](<skills-projects [CURRENT]/projects/IS265/README.md>) | Course study help plus a !homework command that drafts discussion posts and homework. | Claude chat (Project), Gemini, any |
 
 ## Prompts
 

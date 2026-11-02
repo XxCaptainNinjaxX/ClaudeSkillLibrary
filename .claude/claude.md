@@ -58,7 +58,7 @@ Run these from the repo root (the folder names contain spaces and brackets, so k
 - SKILL.md `metadata.version` ↔ `CHANGELOG.md` ↔ root `README.md` (Version column)
 - `skills-projects [CURRENT]/skills/exam-review/SKILL.md` ↔ `skills-projects [CURRENT]/skills/slide-breakdown/SKILL.md` (the no-prompt-note rule and the tone section are copied in both)
 - `skills-projects [CURRENT]/skills/<name>/SKILL.md` ↔ `skills-projects [CURRENT]/skills/<name>/README.md` (triggers, inputs, output format, dependencies)
-- `.claude/commands/command.md` ↔ `Refrence-command.md` (actions, parameters, stops, examples)
+- `.claude/commands/command.md` ↔ `Refrence-Commands.md` (actions, parameters, stops, examples)
 
 ## Library conventions
 
@@ -124,7 +124,7 @@ Root README.md Skills section: one table per category, with columns `Skill | Wha
 
 ## LIBRARY COMMANDS
 
-- All library management runs through `/command` (`.claude/commands/command.md`). Its usage is in `Refrence-command.md`. The actions are `add`, `fix`, `remove`/`delete`, `retire` and `cleanup`.
+- All library management runs through `/command` (`.claude/commands/command.md`). Its usage is in `Refrence-Commands.md`. The actions are `add`, `fix`, `remove`/`delete`, `retire` and `cleanup`.
 - Outside a `/command` run, change IDEAS.md, `skills-projects [CURRENT]/`, `skills-projects [RETIRED]/` or PROMPTS.md only when the owner asks for that change directly. State a plan first and wait for approval.
 - Adding a prompt or a project isn't a command. Do it when asked, using the Formats above, then run the SAFETY CHECK.
 - `skill-creator` (user-level) defaults to `~/.claude/skills/`. Always point it at `skills-projects [CURRENT]/skills/<name>/` instead.

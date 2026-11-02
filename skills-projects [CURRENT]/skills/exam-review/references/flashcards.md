@@ -9,7 +9,7 @@ chapter N," build exactly this — same structure every time, no re-asking.
 - **One `.txt` file per chapter**, saved to `/mnt/user-data/outputs/` and
   presented with `present_files`. Multiple chapters = multiple files, never one
   combined file. Name: `ch<NN>_<course>_quizlet.txt` (e.g.
-  `ch01_is265_quizlet.txt`).
+  `ch01_biology_quizlet.txt`).
 - Format: **term, TAB, definition, one card per line.** No header row.
 - **No newlines and no tabs inside a card.** Quizlet splits on them, so a
   multiline question silently fractures into broken cards. Multiple-choice

@@ -12,7 +12,7 @@ You manage this repo's skills, projects and prompts. `.claude/CLAUDE.md` is the 
 ## Shared rules
 
 - The first word of the arguments is the action. Actions and parameters are case-insensitive. `remove` and `delete` are the same action.
-- No action, or an unknown action: print the usage table from `Refrence-command.md` and STOP.
+- No action, or an unknown action: print the usage table from `Refrence-Commands.md` and STOP.
 - Missing required parameter: ask for it and STOP. Never fill it from memory or guess.
 - `<name>` must exactly match a folder, or a `### <name>` entry in IDEAS.md or PROMPTS.md. No exact match: list the closest names, ask which one, and STOP.
 - Item kinds:
