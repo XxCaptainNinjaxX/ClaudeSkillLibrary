@@ -38,6 +38,7 @@ No skills yet.
 |---|---|---|---|
 | [council](<skills-projects [CURRENT]/skills/council/README.md>) | Independent Claude subagents debate a hard decision, peer-review each other, and deliver a verdict. | Claude chat (Claude Code ⚠️) | 1.1 |
 | [handoff](<skills-projects [CURRENT]/skills/handoff/README.md>) | Compresses a chat into a handoff any new chat or model can continue from. | Claude chat, Claude Code, Gemini, any | 2.0 |
+| [patch](<skills-projects [CURRENT]/skills/patch/README.md>) | Packages a misfiring claude.ai instruction into one report another chat can fix. | Claude chat | 1.0 |
 
 ## Projects
 

@@ -53,3 +53,10 @@ No items yet.
 - description: Compress the current chat into a handoff a new chat (Claude, Gemini, or ChatGPT) can continue from: state, decisions, rules, next step. Also produces an AI-ready overview and prints a portable overview prompt.
 - spec: [handoff/SKILL.md](<skills-projects [CURRENT]/skills/handoff/SKILL.md>) (built before this workflow existed)
 - notes: Open findings from the 2026-10-26 migration safety check, not yet applied: references/template.md and references/topic-modules.md are unused older copies (proposed for deletion); the example filename in SKILL.md looks like a real exam.
+
+### patch
+- type: skill
+- status: built
+- description: Package a claude.ai failure (a Project instruction, ! command, skill, preference or memory line that produced the wrong behavior) into one self-contained patch report for a separate chat to fix.
+- spec: [patch/SKILL.md](<skills-projects [CURRENT]/skills/patch/SKILL.md>) (built before this workflow existed)
+- notes:

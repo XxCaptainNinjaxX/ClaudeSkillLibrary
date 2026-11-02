@@ -40,8 +40,12 @@ Run these from the repo root (the folder names contain spaces and brackets, so k
 ## Do not touch
 
 - `LICENSE`
-- `.claude/CLAUDE-master-.MD` (local template, gitignored)
-- `.env` (gitignored placeholder; never read or print it)
+- `.claude/CLAUDE-master-.MD`
+- `.env`
+
+## Hidden folder (private output)
+
+`hidden/` at the repo root is gitignored (`/hidden` in `.gitignore`), so nothing in it is ever pushed. Put any file I produce for the owner that isn't part of the library there: reports, repo maps, discovery or audit output, scratch notes, and anything that may carry personal info. Use `.txt` (or `.md`) names like `repo-map-report.txt`. Never put library content (skills, prompts, READMEs) in it. Nothing here counts toward the SAFETY CHECK, but still don't write secrets into it.
 
 ## Source of truth
 
@@ -54,6 +58,7 @@ Run these from the repo root (the folder names contain spaces and brackets, so k
 - SKILL.md `metadata.version` ↔ `CHANGELOG.md` ↔ root `README.md` (Version column)
 - `skills-projects [CURRENT]/skills/exam-review/SKILL.md` ↔ `skills-projects [CURRENT]/skills/slide-breakdown/SKILL.md` (the no-prompt-note rule and the tone section are copied in both)
 - `skills-projects [CURRENT]/skills/<name>/SKILL.md` ↔ `skills-projects [CURRENT]/skills/<name>/README.md` (triggers, inputs, output format, dependencies)
+- `.claude/commands/command.md` ↔ `Refrence-command.md` (actions, parameters, stops, examples)
 
 ## Library conventions
 
@@ -78,8 +83,9 @@ IDEAS.md entry, under its category heading:
 
 ```markdown
 ### <kebab-name>
+
 - type: skill | prompt
-- status: idea | designed | built | needs-edit | done
+- status: idea | designed | built | needs-edit | done | retired
 - description: <what it should do, in the owner's words>
 - spec: <empty until designed>
 - notes:
@@ -89,8 +95,10 @@ PROMPTS.md entry, under its category heading (the first entry replaces "No promp
 
 ````markdown
 ### <kebab-name>
+
 - version: x.y | works-in: claude-chat, claude-code, gemini, any
 - use when: <one line>
+
 ```text
 <the prompt, ready to paste>
 ```
@@ -107,46 +115,26 @@ CHANGELOG.md, newest entry first:
 ```
 
 Skill README.md (copy the layout of `skills-projects [CURRENT]/skills/handoff/README.md`): a title and one-paragraph intro, a `Category | Version | Works in` table, then What it does, How it's triggered, Inputs, Output format and Dependencies. Last comes **How to use**, with three subsections:
+
 - **Claude Code:** `mkdir -p ~/.claude/skills`, then `ln -s "$PWD/skills-projects [CURRENT]/skills/<name>" ~/.claude/skills/<name>`, plus the Windows junction alternative (`cmd /c mklink /J`, because PowerShell's `New-Item` misreads the `[ ]` in the path).
 - **Claude chat:** zip the folder so the zip contains `<name>/SKILL.md` (leave out README.md and CHANGELOG.md), then upload it as a custom skill.
 - **Other LLMs (Gemini, ChatGPT, plain prompt):** paste the SKILL.md body as custom instructions, a Gem, or a system prompt. List every Claude-only feature and what to do instead.
 
 Root README.md Skills section: one table per category, with columns `Skill | What it does (≤15 words) | Works in | Version`. The skill name links to `<skills-projects [CURRENT]/skills/<name>/README.md>` (angle brackets, because the path has spaces), and an empty category reads "No skills yet."
 
-## LIBRARY WORKFLOW
+## LIBRARY COMMANDS
 
-### Trigger
-- Phrase: "go through the ideas in IDEAS.md, <verb> <all | names>".
-- Verbs: `design`, `create`, `edit`, `safety check`.
-- `all` means every entry whose status fits the verb: `idea` for design, `designed` for create, `needs-edit` for edit, and every `built` or `done` item for safety check.
-- If the phrase names a file other than IDEAS.md, ask before doing anything.
-- With no trigger, don't touch IDEAS.md, `skills-projects [CURRENT]/`, `skills-projects [RETIRED]/` or PROMPTS.md.
-- Always state a plan first (which entries, which verb, which files) and wait for approval.
-
-### Verbs
-- **design** (`idea` → `designed`): write a spec into the entry's `spec:` field, and build no files. The spec covers:
-  - purpose
-  - triggers
-  - inputs
-  - exact output format
-  - edge cases
-  - dependencies
-  - target surfaces
-- **create** (`designed` → `built`):
-  - **Skills:** build `skills-projects [CURRENT]/skills/<name>/` with the `skill-creator` skill (installed in Claude Code as of 2026-10-26). It defaults to `~/.claude/skills/`, so point it at this repo's `skills-projects [CURRENT]/skills/<name>/` instead. If it isn't installed, follow the Library conventions above. Also write README.md and CHANGELOG.md, with a first entry of `## 1.0 — <date>` / `- Created.`
-  - **Prompts:** add the entry to PROMPTS.md under its category.
-  - **Either type:** run the SAFETY CHECK, update the root README, and set the status.
-- **edit** (`needs-edit`, or any item named):
-  - Make the change.
-  - Bump the version (minor for wording, major for behavior): `metadata.version` for skills, the entry's `version` for prompts.
-  - For skills, add a CHANGELOG entry.
-  - Run the SAFETY CHECK.
-  - Sync the root README and every duplication pair the change touches.
-  - Set the status back to `built`, unless the owner says `done`.
-- **safety check:** run the SAFETY CHECK, output the table, then ask which numbers to apply. Never auto-fix.
+- All library management runs through `/command` (`.claude/commands/command.md`). Its usage is in `Refrence-command.md`. The actions are `add`, `fix`, `remove`/`delete`, `retire` and `cleanup`.
+- Outside a `/command` run, change IDEAS.md, `skills-projects [CURRENT]/`, `skills-projects [RETIRED]/` or PROMPTS.md only when the owner asks for that change directly. State a plan first and wait for approval.
+- Adding a prompt or a project isn't a command. Do it when asked, using the Formats above, then run the SAFETY CHECK.
+- `skill-creator` (user-level) defaults to `~/.claude/skills/`. Always point it at `skills-projects [CURRENT]/skills/<name>/` instead.
 
 ### SAFETY CHECK
+
+Run it when the owner says "safety check <all | names>" (`all` means every `built` or `done` item), and as a step of `/command add` and `/command fix`. Never auto-fix.
+
 The repo is public. Check the working tree only (not git history), and flag these in skills, prompts, scripts and docs:
+
 1. **Personal identity:** the owner's name or nicknames, school, employer, city or age; email addresses, phone numbers, usernames.
 2. **Secrets:** API keys, tokens, passwords, private URLs. Search for patterns such as `sk-`, `ghp_`, `AKIA`, `Bearer `, `api_key`, `password`, `secret`.
 3. **Machine leaks:** absolute paths that contain usernames (`/Users/`, `C:\Users\`, `/home/`).
