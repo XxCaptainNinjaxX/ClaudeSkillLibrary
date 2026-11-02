@@ -4,7 +4,7 @@ description: claude.ai chat edition. Convene a council of independent Claude sub
 license: MIT. See LICENSE
 compatibility: claude.ai chat with the Agent tool and Code execution and file creation turned on. Python 3 in the sandbox runs the tally and the config validator. The Claude Code edition is a separate folder.
 metadata:
-  version: "1.1.0"
+  version: "1.1"
   edition: "chat"
   forked-from: "https://github.com/amgadelgamal/claude-council (MIT)"
 ---

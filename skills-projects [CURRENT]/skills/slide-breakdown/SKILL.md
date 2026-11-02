@@ -1,6 +1,8 @@
 ---
 name: slide-breakdown
 description: Produce a full structured study breakdown of course material — plain explanation, three analogies plus two worked examples per topic, a comparison table with diagnostics, exam-question predictions, and a traps section. Use whenever the user pastes or screenshots class content from ANY subject (information systems, accounting, statistics, psychology, economics, computer science), including slides, textbook tables, definitions, formulas, or lecture notes — even with no instruction, or just "explain this," "next," "break this down," or "what is this." Also use for "what's the difference between X and Y" when X and Y are course terms he is learning, not reviewing. This is a multi-section deliverable, not a quick definition; use the skill rather than answering directly, because the value is the fixed structure. Do not use when he asks to be quizzed or reviewed — that is exam-review.
+metadata:
+  version: "1.0"
 ---
 
 # Slide Breakdown
