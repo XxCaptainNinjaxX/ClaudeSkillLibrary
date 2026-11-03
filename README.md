@@ -44,9 +44,14 @@ No skills yet.
 
 Instructions to paste into a claude.ai Project, a Gem, or a custom GPT. They live in [skills-projects [CURRENT]/projects/](<skills-projects [CURRENT]/projects/README.md>).
 
+> **Tailored, not turnkey:** every project here (current and retired) was written for one person's own setup: their courses, accounts, hardware, tastes and knowledge files. Expect to edit names, rules and knowledge files before it works for you.
+
 | Project                                                       | What it does                                                                          | Works in                           |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------- |
 | [IS265](<skills-projects [CURRENT]/projects/IS265/README.md>) | Course study help plus a !homework command that drafts discussion posts and homework. | Claude chat (Project), Gemini, any |
+| [new-games](<skills-projects [CURRENT]/projects/new-games/README.md>) | Picks backlog games, judges deals against all-time lows, and keeps library.json accurate. | Claude chat (Project), Gemini, any |
+| [prompt,project,skill-creator](<skills-projects [CURRENT]/projects/prompt,project,skill-creator/README.md>) | Tightens rough prompts and drafts Project instructions, ! commands and patch fixes. | Claude chat (Project), Gemini, any |
+| [research-items](<skills-projects [CURRENT]/projects/research-items/README.md>) | Researches items to buy: ranked, cross-checked options, then availability and links. | Claude chat (Project), Gemini, any |
 
 ## Prompts
 
