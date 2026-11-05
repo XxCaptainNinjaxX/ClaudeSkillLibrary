@@ -1,10 +1,10 @@
 # exam-review
 
-Runs structured study review sessions for a course. It picks one of six modes from what you ask, reads only that mode's reference file, and runs it as a multi-turn graded session with a fixed format.
+Runs structured study review sessions for a course. It picks one of seven modes from what you ask, reads only that mode's reference file, and runs it as a multi-turn graded session with a fixed format.
 
 | Category | Version | Works in |
 |---|---|---|
-| education | 2.2 | Claude chat, Claude Code, Gemini, any |
+| education | 3.0 | Claude chat, Claude Code, Gemini, any |
 
 ## What it does
 
@@ -14,16 +14,17 @@ Runs structured study review sessions for a course. It picks one of six modes fr
 | RECALL | Active recall: one question per message, graded, with the full answer every time; misses come back later in new wording | [references/recall.md](references/recall.md) |
 | PRACTICE EXAM | A full practice exam (default 20 questions) matched to the course's real exam format; no answer key until you submit; per-topic scores | [references/practice-exam.md](references/practice-exam.md) |
 | FLASHCARDS | One Quizlet import file per chapter (minimum 80 cards, fixed mix of card types); Anki CSV on request | [references/flashcards.md](references/flashcards.md) |
+| PLAN | A master study plan: sections, time estimates, section quizzes, block midterms, a mock and a per-day schedule, re-projected from your actual pace at every section change | [references/plan.md](references/plan.md) |
 | CHEAT SHEET | A dense last-pass overview: map, term bank by section, formulas, distinctions table, logged weak spots | [references/cheat-sheet.md](references/cheat-sheet.md) |
 | POST-EXAM | Takes a graded exam apart by error type, checks earlier predictions, and rewrites the gap log | [references/post-exam.md](references/post-exam.md) |
 
 It teaches and tests the course's version of the material (flagging errors in it rather than silently fixing them), never invents course content to fill a question count, and doesn't inflate grades.
 
-**Known issue:** SKILL.md's description and intro say "five modes" but define six. The description doesn't mention POST-EXAM, so that mode may need an explicit request, such as "here's how I did on the exam".
+Every session runs inside a master plan. If the chat has no plan yet, the skill builds one and stops for your approval before running the mode you asked for. FLASHCARDS and POST-EXAM are exempt, and saying "skip the plan" skips it. If you paste a plan from an earlier chat, it resumes that one.
 
 ## How it's triggered
 
-Requests to be quizzed, tested or reviewed: "quiz me", "test me", "review chapter X", "what should I study", "where am I weak", "am I ready", asking for flashcards, a practice test or a cheat sheet, or mentioning an upcoming exam. Pasting a graded exam ("here's how I did", "I got X back") selects POST-EXAM. An ambiguous request defaults to DIAGNOSE.
+Requests to be quizzed, tested or reviewed: "quiz me", "test me", "review chapter X", "what should I study", "where am I weak", "am I ready", asking for flashcards, a practice test or a cheat sheet, or mentioning an upcoming exam, midterm or final, even inside a time-management or multi-class message. Asking for a study plan, a progress overview or "how long will this take" selects PLAN. Pasting a graded exam ("here's how I did", "I got X back") selects POST-EXAM. An ambiguous request defaults to DIAGNOSE.
 
 Not for explaining new material; that goes to [slide-breakdown](../slide-breakdown/README.md).
 
@@ -33,6 +34,7 @@ Not for explaining new material; that goes to [slide-breakdown](../slide-breakdo
 - Course material, in priority order: the class Project's knowledge files (chapter decks, examples of the course's exams, syllabus, textbook), then `gaps.md`, then the conversation. General subject knowledge comes last, and the skill says when it uses it.
 - Optional `gaps.md`: a running log of confusions, kept by hand.
 - For POST-EXAM: the graded exam, pasted or described.
+- For PLAN: the exam date and time, what it covers, and your hours available per day. It asks and stops if the date or coverage is missing. Optional: a study guide, and hours for your other classes.
 
 ## Output format
 
@@ -46,6 +48,7 @@ Not for explaining new material; that goes to [slide-breakdown](../slide-breakdo
   ````
 
 - FLASHCARDS: one `.txt` file per chapter, named `ch<NN>_<course>_quizlet.txt`, one card per line as `term<TAB>definition`, no header row. The reply states the card count and the Quizlet import settings (Tab between term and definition, new line between rows).
+- PLAN: a master overview (progress by block, time left, plan per day, and a cross-class table if you mentioned other classes), plus a section recap table at every section change.
 - PRACTICE EXAM: questions first; answers, explanations and per-topic scores only after you submit.
 - POST-EXAM: an error type for each wrong answer (content gap, boundary, reading, execution, format surprise), a corrected exam-structure block to paste into the Project, and a gap-log rewrite with an `## Archive` section.
 - Tone: casual and blunt, key phrases in bold, no filler.
@@ -95,11 +98,12 @@ Upload the zip as a custom skill in Claude's settings (skills need code executio
 
 ### Other LLMs (Gemini, ChatGPT, plain prompt)
 
-Paste the SKILL.md body (everything after the closing `---` of the frontmatter) as custom instructions, a Gem, or a system prompt. **Also** add the six `references/*.md` files as knowledge files (Gem or custom GPT), or paste them after the body: SKILL.md tells the model to read the mode's file before running it.
+Paste the SKILL.md body (everything after the closing `---` of the frontmatter) as custom instructions, a Gem, or a system prompt. **Also** add the seven `references/*.md` files as knowledge files (Gem or custom GPT), or paste them after the body: SKILL.md tells the model to read the mode's file before running it.
 
 | Claude-only feature | What to do instead |
 |---|---|
 | Project knowledge files | Add the course files as Gem or GPT knowledge, or paste the material into the chat |
 | `gaps.md` in the Project | Keep it as a knowledge file, or paste it at the start of a session |
 | Saving flashcards to `/mnt/user-data/outputs/` with `present_files` | Ask for each chapter's cards in a code block and save them as a `.txt` file yourself |
+| Current-time tool for PLAN's section timing | Use message timestamps, or tell the model the start and end times |
 | Routing to the `slide-breakdown` skill | Put slide-breakdown's SKILL.md body in the same Gem, or use it in a separate chat |

@@ -7,9 +7,9 @@ The to-do list and inventory for every skill, project and prompt in this library
 ### exam-review
 - type: skill
 - status: built
-- description: Run structured study review sessions for a course in six modes: diagnose gaps, one-question-at-a-time recall, practice exams, Quizlet/Anki flashcards, cheat sheets, and post-exam analysis of a graded exam.
+- description: Run structured study review sessions for a course in seven modes: build a master study plan with time estimates, diagnose gaps, one-question-at-a-time recall, practice exams, Quizlet/Anki flashcards, cheat sheets, and post-exam analysis of a graded exam.
 - spec: [exam-review/SKILL.md](<skills-projects [CURRENT]/skills/exam-review/SKILL.md>) (built before this workflow existed)
-- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: a reference to the owner's account-level instructions; a past-chat reference in mode selection; "five modes" stated but six defined, and the description omits POST-EXAM; post-exam.md says "four" error types but lists five; flashcard saving has no fallback outside Claude chat.
+- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: a reference to the owner's account-level instructions; a past-chat reference in mode selection; post-exam.md says "four" error types but lists five; flashcard saving has no fallback outside Claude chat. Open from the 2026-11-05 dump safety check: mode selection's "and go" contradicts the session plan's STOP; `TTF` is undefined in references/plan.md (the owner says it means "time to finish", not yet written in).
 
 ### IS265
 - type: project
@@ -23,7 +23,7 @@ The to-do list and inventory for every skill, project and prompt in this library
 - status: built
 - description: Turn pasted or screenshotted course material from any subject into a fixed-format study breakdown: plain explanation, three analogies and two worked examples per topic, comparison table, exam predictions, and traps.
 - spec: [slide-breakdown/SKILL.md](<skills-projects [CURRENT]/skills/slide-breakdown/SKILL.md>) (built before this workflow existed)
-- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: a line naming the owner's field of study; a reference to the owner's account-level instructions; a field-specific analogy domain; only an implied fallback when there's no claude.ai Project.
+- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: a line naming the owner's field of study; a reference to the owner's account-level instructions; a field-specific analogy domain; only an implied fallback when there's no claude.ai Project. Open from the 2026-11-05 dump safety check: "usage constrained" in Step 0 describes the owner's plan limits; the "connectedness" example may come from a specific course (⚠️ VERIFY).
 
 ## career-planning
 

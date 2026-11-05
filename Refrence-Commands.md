@@ -67,7 +67,7 @@ Processed zips move to `dump/done/`. Skipped, blocked and older zips stay in `du
 
 ```text
 /command add webapp-design
-/command fix exam-review "description says five modes, README has six"
+/command fix exam-review "post-exam says four error types but lists five"
 /command fix patch wiring
 /command dump
 /command safety all

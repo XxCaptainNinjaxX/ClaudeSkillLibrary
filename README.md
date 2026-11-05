@@ -21,7 +21,7 @@ IDEAS.md                     to-do list and status of everything above
 
 | Skill                                                                           | What it does                                                                                             | Works in                              | Version |
 | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------- |
-| [exam-review](<skills-projects [CURRENT]/skills/exam-review/README.md>)         | Six study-review modes: diagnosis, recall, practice exams, flashcards, cheat sheets, post-exam analysis. | Claude chat, Claude Code, Gemini, any | 2.2     |
+| [exam-review](<skills-projects [CURRENT]/skills/exam-review/README.md>)         | Seven study-review modes: planning, diagnosis, recall, practice exams, flashcards, cheat sheets, post-exam analysis. | Claude chat, Claude Code, Gemini, any | 3.0     |
 | [slide-breakdown](<skills-projects [CURRENT]/skills/slide-breakdown/README.md>) | Turns pasted course material into a fixed-format breakdown with examples and exam traps.                 | Claude chat, Claude Code, Gemini, any | 1.1     |
 
 ### career-planning

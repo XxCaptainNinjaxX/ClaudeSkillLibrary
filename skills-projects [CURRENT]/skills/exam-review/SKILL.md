@@ -1,8 +1,8 @@
 ---
 name: exam-review
-description: Run structured study review sessions for the user's coursework in five modes — diagnostic gap-finding, one-at-a-time active recall, full practice exams, Quizlet/Anki flashcard export, and condensed cheat sheets. Use whenever the user asks to be quizzed, tested, or reviewed; asks what the user should study, where the user is weak, or whether the user is ready; asks for flashcards, a practice test, or a cheat sheet; says "quiz me," "test me," "review chapter X," or mentions an upcoming exam. Works for ANY subject — accounting, statistics, information systems, psychology, economics, computer science. These are multi-turn graded sessions with specific formats, not one-shot answers, so consult the skill rather than improvising a quiz. Do NOT use for explaining new material the user just pasted — that is slide-breakdown.
+description: Run structured study review for the user's coursework in seven modes — master study plan with time estimates, diagnostic gap-finding, one-at-a-time recall, practice exams, Quizlet/Anki flashcards, cheat sheets, and post-exam breakdowns. Use whenever the user asks to be quizzed, tested, or reviewed; asks what to study, where the user is weak, or whether the user is ready; asks for a study plan, progress overview, or "how long will this take"; asks for flashcards, a practice test, or a cheat sheet; says "quiz me," "test me," or "review chapter X"; or mentions an upcoming exam, midterm, or final, even inside a time-management or multi-class message. Works for ANY subject. These are multi-turn graded sessions with fixed formats, so consult the skill rather than improvising a quiz. Do NOT use for explaining new material the user just pasted — that is slide-breakdown.
 metadata:
-  version: "2.2"
+  version: "3.0"
 ---
 
 # Exam Review
@@ -14,9 +14,23 @@ hasn't seen goes to `slide-breakdown`.
 > no-prompt-note rule, and the tone section are duplicated in both. Edit both
 > or they drift.
 
+## Session plan — runs before any mode
+
+Every session works inside a master plan. Before running any mode:
+
+- No plan in this chat yet → read `references/plan.md` and build one
+  (PLAN, step 1). STOP there; the mode runs after the user approves.
+- Plan already in this chat, or the user pastes or attaches one from an earlier
+  chat → resume it. Don't rebuild it.
+- Exceptions: FLASHCARDS and POST-EXAM run without a plan. If the user says
+  "skip the plan," skip it.
+
+While a plan is active, every section change follows `references/plan.md`
+step 3: section recap → master overview → next section.
+
 ## Mode selection — then read that mode's file
 
-Five modes. Each lives in its own reference file so a flashcard request
+Seven modes. Each lives in its own reference file so a flashcard request
 doesn't drag practice-exam instructions into context. **Pick the mode, read
 only that file, then run it.**
 
@@ -26,7 +40,8 @@ only that file, then run it.**
 | "quiz me," "test me on," "recall" | RECALL | `references/recall.md` |
 | "practice exam," "practice test," "mock exam" | PRACTICE EXAM | `references/practice-exam.md` |
 | "flashcards," "flashcard set," "quizlet," "anki," "export," "min 80" | FLASHCARDS | `references/flashcards.md` |
-| "cheat sheet," "overview," "what have we covered" | CHEAT SHEET | `references/cheat-sheet.md` |
+| "study plan," "master plan," "overview," "progress," "how long," "TTF" | PLAN | `references/plan.md` |
+| "cheat sheet," "what have we covered" | CHEAT SHEET | `references/cheat-sheet.md` |
 | pastes a graded/returned exam, "here's how I did," "I got X back" | POST-EXAM | `references/post-exam.md` |
 
 **If ambiguous, default to DIAGNOSE** — highest value, and the one the user named as
