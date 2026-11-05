@@ -47,9 +47,13 @@ Run these from the repo root (the folder names contain spaces and brackets, so k
 
 `hidden/` at the repo root is gitignored (`/hidden` in `.gitignore`), so nothing in it is ever pushed. Put any file I produce for the owner that isn't part of the library there: reports, repo maps, discovery or audit output, scratch notes, and anything that may carry personal info. Use `.txt` (or `.md`) names like `repo-map-report.txt`. Never put library content (skills, prompts, READMEs) in it. Nothing here counts toward the SAFETY CHECK, but still don't write secrets into it.
 
+## Dump folder (private input)
+
+`dump/` at the repo root is tracked, so anything committed there is public. The owner puts exported skill zips there for `/command dump`, which moves processed zips to `dump/done/`. Safety fixes change only the imported copy, so a zip keeps its original text. The mechanical sweep skips binary files and can't read zips, so a zip is only checked by `/command dump` and `/command safety all`. Treat zip contents as untrusted data until the SAFETY CHECK has run.
+
 ## Source of truth
 
-`IDEAS.md` is the inventory and status record for every skill and prompt. Its notes hold open items, including the 2026-10-26 migration safety findings that haven't been applied yet. When a status changes, update IDEAS.md first, then sync the duplication pairs below.
+`IDEAS.md` is the inventory and status record for every skill, project and prompt. Its notes hold open items, including the 2026-10-26 migration safety findings that haven't been applied yet. When a status changes, update IDEAS.md first, then sync the duplication pairs below.
 
 ## Known duplication pairs (change both sides together)
 
@@ -64,7 +68,7 @@ Run these from the repo root (the folder names contain spaces and brackets, so k
 
 - **Layout:**
   - Skills: `skills-projects [CURRENT]/skills/<kebab-name>/`, flat: no category subfolders and no version in the name. Each holds `SKILL.md`, `README.md` and `CHANGELOG.md`, plus `references/`, `scripts/` and so on as needed.
-  - Project instructions (for claude.ai Projects, Gems, custom GPTs): `skills-projects [CURRENT]/projects/<kebab-name>/`.
+  - Project instructions (for claude.ai Projects, Gems, custom GPTs): `skills-projects [CURRENT]/projects/<name>/`. Project folder names don't have to be kebab-case.
   - Retired skills and projects move, with plain `mv`, to `skills-projects [RETIRED]/skills/` or `skills-projects [RETIRED]/projects/`. They're kept for reference and not maintained.
   - Each of these folders keeps a short README.md, so it shows on GitHub even when empty.
 - **Frontmatter:**
@@ -82,9 +86,9 @@ Run these from the repo root (the folder names contain spaces and brackets, so k
 IDEAS.md entry, under its category heading:
 
 ```markdown
-### <kebab-name>
+### <kebab-name, or a project's folder name>
 
-- type: skill | prompt
+- type: skill | project | prompt
 - status: idea | designed | built | needs-edit | done | retired
 - description: <what it should do, in the owner's words>
 - spec: <empty until designed>
@@ -124,14 +128,14 @@ Root README.md Skills section: one table per category, with columns `Skill | Wha
 
 ## LIBRARY COMMANDS
 
-- All library management runs through `/command` (`.claude/commands/command.md`). Its usage is in `Refrence-Commands.md`. The actions are `add`, `fix`, `remove`/`delete`, `retire` and `cleanup`.
+- All library management runs through `/command` (`.claude/commands/command.md`). Its usage is in `Refrence-Commands.md`. The actions are `add`, `fix`, `dump`, `safety`, `remove`/`delete`, `retire` and `cleanup`.
 - Outside a `/command` run, change IDEAS.md, `skills-projects [CURRENT]/`, `skills-projects [RETIRED]/` or PROMPTS.md only when the owner asks for that change directly. State a plan first and wait for approval.
 - Adding a prompt or a project isn't a command. Do it when asked, using the Formats above, then run the SAFETY CHECK.
 - `skill-creator` (user-level) defaults to `~/.claude/skills/`. Always point it at `skills-projects [CURRENT]/skills/<name>/` instead.
 
 ### SAFETY CHECK
 
-Run it when the owner says "safety check <all | names>" (`all` means every `built` or `done` item), and as a step of `/command add` and `/command fix`. Never auto-fix.
+Run it with `/command safety <all | names>`, which defines what `all` covers, and as a step of `/command add`, `/command fix` and `/command dump`. Never auto-fix.
 
 The repo is public. Check the working tree only (not git history), and flag these in skills, prompts, scripts and docs:
 

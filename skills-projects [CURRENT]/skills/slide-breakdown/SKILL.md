@@ -1,14 +1,14 @@
 ---
 name: slide-breakdown
-description: Produce a full structured study breakdown of course material — plain explanation, three analogies plus two worked examples per topic, a comparison table with diagnostics, exam-question predictions, and a traps section. Use whenever the user pastes or screenshots class content from ANY subject (information systems, accounting, statistics, psychology, economics, computer science), including slides, textbook tables, definitions, formulas, or lecture notes — even with no instruction, or just "explain this," "next," "break this down," or "what is this." Also use for "what's the difference between X and Y" when X and Y are course terms he is learning, not reviewing. This is a multi-section deliverable, not a quick definition; use the skill rather than answering directly, because the value is the fixed structure. Do not use when he asks to be quizzed or reviewed — that is exam-review.
+description: Produce a full structured study breakdown of course material — plain explanation, three analogies plus two worked examples per topic, a comparison table with diagnostics, exam-question predictions, and a traps section. Use whenever the user pastes or screenshots class content from ANY subject (information systems, accounting, statistics, psychology, economics, computer science), including slides, textbook tables, definitions, formulas, or lecture notes — even with no instruction, or just "explain this," "next," "break this down," or "what is this." Also use for "what's the difference between X and Y" when X and Y are course terms the user is learning, not reviewing. This is a multi-section deliverable, not a quick definition; use the skill rather than answering directly, because the value is the fixed structure. Do not use when the user asks to be quizzed or reviewed — that is exam-review.
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Slide Breakdown
 
 The user pastes course material with minimal or no instruction. Assume the
-instruction is "explain this in the standard format" unless he says otherwise.
+instruction is "explain this in the standard format" unless the user says otherwise.
 
 The subject changes. The format does not.
 
@@ -35,10 +35,10 @@ most expensive error this skill can make.
 
 **When the course material is factually wrong or outdated:** teach the
 course's version, because that is what gets graded — but flag the error in one
-line where it appears, saying what's actually true and that he should answer
-the course's way anyway. Never silently propagate it; he's an MIS major who
+line where it appears, saying what's actually true and that the user should answer
+the course's way anyway. Never silently propagate it; the user is an MIS major who
 will carry this into work, and never silently correct it either, because that
-loses him points.
+loses the user points.
 
 ## Step 0 — Scope check before writing anything
 
@@ -46,7 +46,7 @@ Count the distinct topics in the input.
 
 - **1–4 topics** → full treatment, all of them.
 - **5 or more topics, or multiple slides pasted at once** → do not attempt all
-  of them. Full treatment on a 10-term slide runs enormous and he is usage
+  of them. Full treatment on a 10-term slide runs enormous and the user is usage
   constrained. Instead: give the "frame the set" section covering everything,
   then a one-line-per-term orientation list, then say which 3–4 you're taking
   in full and take them. Offer the rest as a follow-up in one line.
@@ -59,7 +59,7 @@ When the input is a screenshot or photo rather than pasted text, first give a
 compact restatement of what you read off it: the terms, the table structure,
 the formula, the numbers. Two to six lines, no interpretation.
 
-This exists so he can catch a misread before you build five examples on top of
+This exists so the user can catch a misread before you build five examples on top of
 it. If any part is genuinely illegible or ambiguous, say which part and what
 you assumed — do not silently guess at a number or a term.
 
@@ -84,7 +84,7 @@ the axis the material is sorted on, how the pieces relate.
 
 Then, critically: **if the course's source uses a definition, category
 boundary, or naming convention that differs from the standard academic
-version, flag it and tell him to answer to the course's version.** Exams grade
+version, flag it and tell the user to answer to the course's version.** Exams grade
 the professor's wording, not the discipline's consensus. When it applies, this
 is the highest-value line in the response.
 
@@ -97,7 +97,7 @@ the general version while saying that's what you did.
 Two to four sentences of plain language, **before any analogy or example.**
 
 Ordering is not stylistic. The explanation is what the examples hang on. Lead
-with an analogy and he infers the concept instead of receiving it, which is
+with an analogy and the user infers the concept instead of receiving it, which is
 how a definition ends up almost-right on an exam.
 
 ### 5. Five items per topic — 3 analogies + 2 worked
@@ -126,7 +126,7 @@ Every item explains **why it belongs**. A bare example is half an answer.
 ### 6. Compare-and-contrast table
 
 Markdown table covering **every topic in the input** — including the ones you
-did not take in full at Step 0. "The set" means what he pasted, not what you
+did not take in full at Step 0. "The set" means what the user pasted, not what you
 explained. A one-row-per-term table with a diagnostic column is cheap and it's
 the thing that separates nine confusable terms, so the truncated case is
 exactly where it earns the most. Include a
@@ -136,7 +136,7 @@ is separating things under time pressure, not re-listing them.
 ### 7. Master diagnostic question
 
 One question, immediately after the table, that separates the whole set. The
-thing to ask himself when he can't tell which one he's looking at.
+thing the user asks themselves when they can't tell which one they're looking at.
 
 ### 8. Likely on the exam
 
@@ -146,7 +146,7 @@ near-verbatim. Quote the source's exact phrases where they're quizzable.
 
 For quantitative material, name which formula is given on the exam versus
 memorized, if the course materials say. If they don't, say you don't know
-rather than guessing — a wrong call here changes what he memorizes.
+rather than guessing — a wrong call here changes what the user memorizes.
 
 ### 9. Traps and how to dodge them
 
@@ -154,15 +154,15 @@ Lead with the single most likely confusion, labeled exactly:
 
 **"The one your exam will try to trip you on: X vs. Y."**
 
-Then the rest. **Every trap gets a concrete dodge** — a question he asks
-himself in the moment, not a warning to be careful.
+Then the rest. **Every trap gets a concrete dodge** — a question the user asks
+themselves in the moment, not a warning to be careful.
 
 ### 10. Gap log block — only when something actually surfaced
 
 **Requires an exchange.** If this is a cold paste with no back-and-forth yet,
 there is nothing to log — skip the section entirely and do not emit an empty
-block. Only when he has stated his own understanding and it was wrong, or a
-follow-up revealed a hole, end with one fenced block he can copy straight into the class Project's
+block. Only when the user has stated their own understanding and it was wrong, or a
+follow-up revealed a hole, end with one fenced block the user can copy straight into the class Project's
 `gaps.md`:
 
 ````
@@ -174,7 +174,7 @@ follow-up revealed a hole, end with one fenced block he can copy straight into t
 One fenced block, at the very end, nothing else in it. It has to be
 copy-pasteable in one motion or it won't get maintained.
 
-Only log real misses. Logging "he asked a clarifying question" makes the file
+Only log real misses. Logging "the user asked a clarifying question" makes the file
 noise, and a noisy gap file sends `exam-review` at the wrong topics — worse
 than an empty one.
 
@@ -230,13 +230,13 @@ Foreign key — references the primary key of another table."*
 - Connect back to earlier concepts in the same course when they genuinely link
   (relational keys as an implementation of "connectedness," for instance).
   Don't force it.
-- If he states his understanding and it's right, say so plainly, then sharpen
+- If the user states their understanding and it's right, say so plainly, then sharpen
   the edges. Do not manufacture a correction to seem useful.
 
 ## Do NOT include
 
-- **No prompt note.** His account-level instructions request an
-  end-of-response critique of his prompt phrasing. It is off inside this
+- **No prompt note.** The user's account-level instructions request an
+  end-of-response critique of their prompt phrasing. It is off inside this
   skill — it's noise in study output. Do not reintroduce it.
 - No analogies before the plain explanation.
 - No fewer than five items per topic taken in full.

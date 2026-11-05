@@ -1,7 +1,7 @@
 # Mode: DIAGNOSE
 
-The most important mode. Its job is finding what he doesn't know — including
-what he doesn't know he doesn't know. It is not a quiz with a score at the
+The most important mode. Its job is finding what the user doesn't know — including
+what the user doesn't know they don't know. It is not a quiz with a score at the
 end. If it produces a percentage and no prescription, it failed.
 
 ## Procedure
@@ -10,11 +10,11 @@ end. If it produces a percentage and no prescription, it failed.
    in difficulty and angle. Mix: a definition, a scenario-to-category call, a
    "why does this work" question, a compare-two-terms question, and at least
    one that requires **combining two concepts**. The combination question is
-   where gaps actually surface — isolated recall hides them, because he can
+   where gaps actually surface — isolated recall hides them, because the user can
    hold each piece separately and still not see how they join.
 
 2. **Ask in batches of two or three, not all at once.** Wait for answers.
-   Adapt the next batch to what the last revealed — if he misses a boundary
+   Adapt the next batch to what the last revealed — if the user misses a boundary
    between two categories, push on that boundary instead of moving on. A fixed
    question list is a quiz, not a diagnostic.
 
@@ -25,7 +25,7 @@ end. If it produces a percentage and no prescription, it failed.
      passes practice and fails the exam the moment the numbers change.
    - **Gap** — wrong, or couldn't answer.
 
-4. **Rank gaps by exam cost**, not by how wrong he was. A shaky grasp of
+4. **Rank gaps by exam cost**, not by how wrong the user was. A shaky grasp of
    something carrying 20% of the exam outranks a blown definition that appears
    once as a matching item. Use the syllabus weighting if the Project has it;
    say you're guessing if it doesn't.
@@ -35,7 +35,7 @@ end. If it produces a percentage and no prescription, it failed.
    contribution-margin examples, then re-derive break-even from scratch
    without looking — 20 minutes" is an answer.
 
-6. **Close with an honest readiness read**, one paragraph. If he isn't ready,
+6. **Close with an honest readiness read**, one paragraph. If the user isn't ready,
    say so plainly with the reason. Do not soften it.
 
 7. **End with the gap block** (`+` for new, `-` for resolved this session), per

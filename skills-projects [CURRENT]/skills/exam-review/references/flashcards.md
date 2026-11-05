@@ -1,6 +1,6 @@
 # Mode: FLASHCARDS
 
-This is the user's locked flashcard spec. When he says anything like "make a
+This is the user's locked flashcard spec. When the user says anything like "make a
 flashcard set," "min 80 slide flashcard set for quizlet," or "do the same for
 chapter N," build exactly this — same structure every time, no re-asking.
 
@@ -18,12 +18,12 @@ chapter N," build exactly this — same structure every time, no re-asking.
   **Between term and definition: Tab. Between rows: New line.**
 - Do not paste the full set into chat — at 80+ cards it buries the response.
   The file is the deliverable.
-- Anki `.csv` only if he asks for Anki. Then: `#separator:comma` first line,
+- Anki `.csv` only if the user asks for Anki. Then: `#separator:comma` first line,
   no header, RFC 4180 quoting.
 
 ## Size
 
-- **Minimum 80 cards per chapter** unless he names a different number. 80 is
+- **Minimum 80 cards per chapter** unless the user names a different number. 80 is
   a floor, not a target — go over if the chapter supports it.
 - Reach the floor with more MC / T/F / scenario cards **on real chapter
   content**, never invented content. If the source genuinely can't support 80
@@ -38,12 +38,12 @@ chapter N," build exactly this — same structure every time, no re-asking.
 | Definitions | ~35% | The exam expects near-verbatim recall of course terms |
 | Multiple choice | ~25% | Mirrors the exam format; trains picking the right term out of close distractors |
 | True/False | ~20% | Catches the half-understood version — the statement that's almost right |
-| Scenario / "which one failed?" | ~10% | Tests applying a term to a situation, which is where he loses points |
+| Scenario / "which one failed?" | ~10% | Tests applying a term to a situation, which is where the user loses points |
 | List-the-set + compare cards | ~10% | Exams ask for the whole category, and for the difference between neighbors |
 
 Order the file **by topic**, not by type — all of a topic's cards together,
 definitions first, then MC, T/F, scenario. Studying one concept at a time
-beats shuffling types before he knows the terms (Quizlet can shuffle later).
+beats shuffling types before the user knows the terms (Quizlet can shuffle later).
 
 ## Card formats — exact
 
@@ -56,12 +56,12 @@ beats shuffling types before he knows the terms (Quizlet can shuffle later).
 - **True/False:** `T/F: Timeliness is an intrinsic dimension of information quality.` → `False — timeliness is contextual; how fresh is fresh enough depends on the task.`
   Roughly half true, half false. Every answer gets a one-line reason.
 - **Scenario:** `Scenario: A report is accurate but three weeks old for a daily decision. Which dimension fails?` → `Timeliness (contextual) — the info is correct, just wrong for this task's time window.`
-- **List-the-set:** `List the intrinsic dimensions (course version).` → full list in one card. Per the card rule below, a set he must recite is one card, not one per item.
+- **List-the-set:** `List the intrinsic dimensions (course version).` → full list in one card. Per the card rule below, a set the user must recite is one card, not one per item.
 - **Compare:** `Intrinsic vs. contextual — how do you tell them apart?` → `Intrinsic: judged on the info alone. Contextual: depends on the task. Test: would it be bad for everyone, or only for this job?`
 
-## Required breakdowns — when he names a taxonomy, decompose it fully
+## Required breakdowns — when the user names a taxonomy, decompose it fully
 
-If his request names a category structure (e.g. "info quality dimensions =
+If the user's request names a category structure (e.g. "info quality dimensions =
 intrinsic + contextual, intrinsic = accurate, believable, objective, …"), that
 structure is **mandatory coverage**, and each level gets its own cards:
 
@@ -72,16 +72,16 @@ structure is **mandatory coverage**, and each level gets its own cards:
    least one MC or T/F that tests which branch it belongs to, and one
    scenario card where it's the thing that failed.
 
-**His named structure beats general knowledge.** If he or the course puts a
+**The user's named structure beats general knowledge.** If the user or the course puts a
 term in a different branch than the textbook-standard model (e.g. Wang &
-Strong), use his/the course's placement — that's what's graded — and flag the
+Strong), use the user's/the course's placement — that's what's graded — and flag the
 difference once in the response, not in the cards.
 
 ## Card-writing rules
 
 - Definitions in the **course's wording** wherever the exam expects
   near-verbatim recall.
-- **One idea per card** — except a set he must list, which is one card asking
+- **One idea per card** — except a set the user must list, which is one card asking
   for the whole set, because the exam asks for the set.
 - Quantitative material gets **two-directional formula cards**: formula → what
   it computes, and what it computes → formula.

@@ -1,6 +1,6 @@
 # Ideas and inventory
 
-The to-do list and inventory for every skill and prompt in this library, and the record of their status. Status moves `idea` → `designed` → `built`; `needs-edit` marks something to rework, and `done` marks it finished.
+The to-do list and inventory for every skill, project and prompt in this library, and the record of their status. Status moves `idea` → `designed` → `built`; `needs-edit` marks something to rework, and `done` marks it finished.
 
 ## education
 
@@ -9,14 +9,21 @@ The to-do list and inventory for every skill and prompt in this library, and the
 - status: built
 - description: Run structured study review sessions for a course in six modes: diagnose gaps, one-question-at-a-time recall, practice exams, Quizlet/Anki flashcards, cheat sheets, and post-exam analysis of a graded exam.
 - spec: [exam-review/SKILL.md](<skills-projects [CURRENT]/skills/exam-review/SKILL.md>) (built before this workflow existed)
-- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: gendered pronouns for the user; a reference to the owner's account-level instructions; a past-chat reference in mode selection; "five modes" stated but six defined, and the description omits POST-EXAM; post-exam.md says "four" error types but lists five; flashcard saving has no fallback outside Claude chat.
+- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: a reference to the owner's account-level instructions; a past-chat reference in mode selection; "five modes" stated but six defined, and the description omits POST-EXAM; post-exam.md says "four" error types but lists five; flashcard saving has no fallback outside Claude chat.
+
+### IS265
+- type: project
+- status: built
+- description: Course Project that routes pasted material to slide-breakdown and review requests to exam-review, and drafts graded work through a !homework command.
+- spec: [IS265/Instructions+Commands.md](<skills-projects [CURRENT]/projects/IS265/Instructions+Commands.md>)
+- notes:
 
 ### slide-breakdown
 - type: skill
 - status: built
 - description: Turn pasted or screenshotted course material from any subject into a fixed-format study breakdown: plain explanation, three analogies and two worked examples per topic, comparison table, exam predictions, and traps.
 - spec: [slide-breakdown/SKILL.md](<skills-projects [CURRENT]/skills/slide-breakdown/SKILL.md>) (built before this workflow existed)
-- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: gendered pronouns for the user; a line naming the owner's field of study; a reference to the owner's account-level instructions; a field-specific analogy domain; only an implied fallback when there's no claude.ai Project.
+- notes: Open findings from the 2026-10-26 migration safety check, not yet applied: a line naming the owner's field of study; a reference to the owner's account-level instructions; a field-specific analogy domain; only an implied fallback when there's no claude.ai Project.
 
 ## career-planning
 
@@ -54,9 +61,30 @@ No items yet.
 - spec: [handoff/SKILL.md](<skills-projects [CURRENT]/skills/handoff/SKILL.md>) (built before this workflow existed)
 - notes: Open findings from the 2026-10-26 migration safety check, not yet applied: references/template.md and references/topic-modules.md are unused older copies (proposed for deletion); the example filename in SKILL.md looks like a real exam.
 
+### new-games
+- type: project
+- status: built
+- description: Picks what to play from the user's backlog, judges whether a deal is worth buying now or waiting for, finds new releases that fit, and keeps the game library file accurate.
+- spec: [new-games/instructions.md](<skills-projects [CURRENT]/projects/new-games/instructions.md>)
+- notes:
+
 ### patch
 - type: skill
 - status: built
 - description: Package a claude.ai failure (a Project instruction, ! command, skill, preference or memory line that produced the wrong behavior) into one self-contained patch report for a separate chat to fix.
 - spec: [patch/SKILL.md](<skills-projects [CURRENT]/skills/patch/SKILL.md>) (built before this workflow existed)
+- notes:
+
+### prompt,project,skill-creator
+- type: project
+- status: built
+- description: Turns a rough, wordy request into a tightened prompt, a full Project instruction set, a ! command for a specific Project, or a fix built from a patch report.
+- spec: [prompt,project,skill-creator/instructions.md](<skills-projects [CURRENT]/projects/prompt,project,skill-creator/instructions.md>)
+- notes:
+
+### research-items
+- type: project
+- status: built
+- description: Researches an item to buy from any store: a ranked, cross-referenced shortlist first, then availability, where to buy and direct links once the user is ready.
+- spec: [research-items/instructions.md](<skills-projects [CURRENT]/projects/research-items/instructions.md>)
 - notes:

@@ -1,6 +1,6 @@
 # Mode: POST-EXAM
 
-Triggered when he pastes or describes a graded, returned exam. This is the
+Triggered when the user pastes or describes a graded, returned exam. This is the
 highest-signal data the whole system ever gets — a real instrument, scored by
 the person who writes the questions. Everything else in this skill is a proxy
 for it. Treat it accordingly.
@@ -8,7 +8,7 @@ for it. Treat it accordingly.
 ## Procedure
 
 1. **Take the exam apart before commenting on the score.** Per wrong answer:
-   what the question actually tested, what he answered, and which of these it
+   what the question actually tested, what the user answered, and which of these it
    was:
    - **Content gap** — didn't know it.
    - **Boundary error** — knew both concepts, picked the wrong one. The most
@@ -29,7 +29,7 @@ for it. Treat it accordingly.
 
 3. **Update the course's exam-structure notes.** Write out the corrected
    format description — question counts by type, weighting, time, what was
-   given versus memorized — as a block he can paste into the Project's
+   given versus memorized — as a block the user can paste into the Project's
    exam-structure file. Next exam's practice is only as good as this.
 
 4. **Rewrite the gap log**, in one block:

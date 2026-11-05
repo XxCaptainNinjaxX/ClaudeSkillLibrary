@@ -4,7 +4,7 @@ Turns course material (pasted text or a screenshot) into a full study breakdown 
 
 | Category | Version | Works in |
 |---|---|---|
-| education | 1.0 | Claude chat, Claude Code, Gemini, any |
+| education | 1.1 | Claude chat, Claude Code, Gemini, any |
 
 ## What it does
 

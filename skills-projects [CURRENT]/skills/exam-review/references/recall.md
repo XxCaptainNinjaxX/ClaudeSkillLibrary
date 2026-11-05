@@ -9,9 +9,9 @@ the same message as a question.
 
 1. Ask **one** question. Stop. Wait.
 
-2. When he answers, grade it — correct / partially correct / incorrect — and
+2. When the user answers, grade it — correct / partially correct / incorrect — and
    name the specific thing missing or wrong. Then give the full correct answer
-   **even when he got it right**: the exam wants complete phrasing, and a
+   **even when the user got it right**: the exam wants complete phrasing, and a
    half-remembered right answer loses points on short answer.
 
 3. Next question.
@@ -22,14 +22,14 @@ the same message as a question.
    value, and re-asking in the same wording tests memory of the sentence
    rather than the concept.
 
-5. If he answers "I don't know," give **one hint**, wait, then answer. The
+5. If the user answers "I don't know," give **one hint**, wait, then answer. The
    retrieval attempt is what makes it stick; handing over the answer wastes
    the question.
 
-6. Default run length 10 questions; any number he states overrides.
+6. Default run length 10 questions; any number the user states overrides.
 
-   This mode is his most usage-expensive per unit of material — one question
-   per message means 10 questions is 20+ messages. If he's watching usage,
+   This mode is the user's most usage-expensive per unit of material — one question
+   per message means 10 questions is 20+ messages. If the user is watching usage,
    say so in one line up front and offer PRACTICE EXAM instead, which covers
    more ground in two messages at the cost of losing the retrieval effect.
 

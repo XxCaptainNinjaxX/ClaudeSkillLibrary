@@ -4,7 +4,7 @@ Runs structured study review sessions for a course. It picks one of six modes fr
 
 | Category | Version | Works in |
 |---|---|---|
-| education | 2.1 | Claude chat, Claude Code, Gemini, any |
+| education | 2.2 | Claude chat, Claude Code, Gemini, any |
 
 ## What it does
 
